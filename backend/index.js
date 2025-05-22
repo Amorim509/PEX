@@ -1,5 +1,7 @@
 const express = require("express");
 const { google } = require("googleapis");
+require("dotenv").config();
+
 
 const app = express();
 app.use(express.json());
@@ -7,7 +9,7 @@ app.use(express.json());
 async function getAuthSheets() {
     
     const auth = new google.auth.GoogleAuth({
-        keyFile: "Credentials.json",
+        keyFile: process.env.GOOGLE_CREDENTIALS_PATH,
         scopes: "https://www.googleapis.com/auth/spreadsheets"
     });
 

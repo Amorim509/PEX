@@ -1,0 +1,4 @@
+# Ignorar arquivos sensíveis e dependências
+Credentials.json
+.env
+node_modules/
