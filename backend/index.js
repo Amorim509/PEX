@@ -1,9 +1,11 @@
 const express = require("express");
 const { google } = require("googleapis");
+const cors = require("cors");
 require("dotenv").config();
 
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 async function getAuthSheets() {
@@ -29,18 +31,6 @@ async function getAuthSheets() {
         spreadsheetId
     };
 }
-
-app.get("/metadata", async (req, res) => {
-
-    const {googleSheets, auth, spreadsheetId} = await getAuthSheets();
-
-    const metadata = await googleSheets.spreadsheets.get({
-        auth,
-        spreadsheetId
-    })
-
-    res.send(metadata.data);
-})
 
 app.get("/getRows", async (req, res) => {
 

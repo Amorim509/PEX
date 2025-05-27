@@ -79,8 +79,7 @@ http://localhost:3001
 ---
 
 ## 📌 Rotas disponíveis
-
-- `GET /metadata` → Dados da planilha  
+  
 - `GET /getRows` → Linhas da aba `Leads`
 - `POST /addRow` → Adiciona linhas na aba `Leads`
 
